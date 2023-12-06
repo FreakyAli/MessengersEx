@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MessengersEx"
+             x:DataType="vm:MainViewModel"
              x:Class="MessengersEx.MainPage">
 
     <ScrollView>
@@ -25,10 +27,15 @@
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
             <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
+                Text="Click me for SRM"
+                Command="{Binding StrongReferenceCommand}"
                 SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill" />
+
+              <Button
+                Text="Click me for WRM"
+                Command="{Binding WeakReferenceCommand}"
+                SemanticProperties.Hint="Counts the number of times you click"
                 HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>
